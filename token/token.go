@@ -5,7 +5,7 @@ type TokenType string
 
 type Token struct {
 	Type    TokenType
-	Literal string
+	Literal string // 字面值
 }
 
 const (
@@ -13,7 +13,7 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-	// 标识符
+	// 标识符, 标识符比较特殊, 源码中可以出现任意字母组合的标识符
 	IDENT = "IDENT"
 	INT   = "INT"
 
@@ -29,7 +29,21 @@ const (
 	LBRACE    = "{"
 	RBRACE    = "}"
 
-	// 关键字
+	// 关键字, 这里的值并不是源码中的关键字, 关键字字面值单独定义在keywords中
 	FUNCTION = "FUNCTION"
-	LET      = "LET4"
+	LET      = "LET"
 )
+
+// 单独维护一份关键字, 这里的关键字就是源码里面的关键字
+var keywords = map[string]TokenType{
+	"fn":  FUNCTION,
+	"let": LET,
+}
+
+func LookupIdent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
+
+	return IDENT
+}
