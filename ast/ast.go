@@ -34,8 +34,9 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
+// let语句实现的是语句，语句不生成值
 type LetStatement struct {
-	Token token.Token
+	Token token.Token // 特指token.LET
 	Name *Identifier
 	Value Expression
 }
@@ -45,8 +46,9 @@ func (ls *LetStatement) TokenLiteral() string {
 	return ls.Token.Literal
 }
 
+// 标识符实现的是表达式，表达式生成值，注意与语句的区别
 type Identifier struct {
-	Token token.Token
+	Token token.Token // 特指token.IDENT
 	Value String
 }
 
