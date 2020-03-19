@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"local/gointerpreter/lexer"
-	"local/gointerpreter/token"
+	"gointerpreter/lexer"
+	"gointerpreter/token"
 )
 
 const PROMPT = ">> "

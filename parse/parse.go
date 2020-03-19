@@ -1,9 +1,9 @@
 package parse
 
 import (
-	local/gointerpreter/token
-	local/gointerpreter/lexer
-	local/gointerpreter/ast
+	gointerpreter/token
+	gointerpreter/lexer
+	gointerpreter/ast
 )
 
 type Parse struct {

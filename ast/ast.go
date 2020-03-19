@@ -2,7 +2,7 @@
 package ast
 
 import (
-	local/gointerpreter/token
+	gointerpreter/token
 )
 
 // 语句和表达式都需要实现Node接口

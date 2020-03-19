@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/user"
 
-	"local/gointerpreter/repl"
+	"gointerpreter/repl"
 )
 
 func main() {
