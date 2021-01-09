@@ -1,15 +1,15 @@
 package parse
 
 import (
-	gointerpreter/token
-	gointerpreter/lexer
-	gointerpreter/ast
+	"gointerpreter/ast"
+	"gointerpreter/lexer"
+	"gointerpreter/token"
 )
 
 type Parse struct {
 	l *lexer.Lexer
 
-	curToken token.Token
+	curToken  token.Token
 	peekToken token.Token
 }
 
@@ -23,7 +23,7 @@ func New(l *lexer.Lexer) *Parse {
 	return p
 }
 
-func nextToken(p *Parse) {
+func (p *Parse) nextToken() {
 	p.curToken = p.peekToken
 	p.peekToken = p.l.NextToken()
 }

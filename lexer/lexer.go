@@ -18,21 +18,17 @@ func New(input string) *Lexer {
 }
 
 func (l *Lexer) readChar() {
-	if l.readPosition >= len(l.input) {
-		// 读到字符串的结尾，ch设置为NUL
-		l.ch = 0
-	} else {
-		// 字符串也可以像数组一样使用
-		l.ch = l.input[l.readPosition]
-	}
+	l.ch = l.peekChar()
 	l.position = l.readPosition
 	l.readPosition += 1
 }
 
 func (l *Lexer) peekChar() byte {
 	if l.readPosition >= len(l.input) {
+		// 读到字符串的结尾，ch设置为NUL
 		return 0
 	} else {
+		// 字符串也可以像数组一样使用
 		return l.input[l.readPosition]
 	}
 }

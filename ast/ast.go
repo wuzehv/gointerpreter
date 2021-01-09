@@ -2,7 +2,7 @@
 package ast
 
 import (
-	gointerpreter/token
+	"gointerpreter/token"
 )
 
 // 语句和表达式都需要实现Node接口
@@ -37,7 +37,7 @@ func (p *Program) TokenLiteral() string {
 // let语句实现的是语句，语句不生成值
 type LetStatement struct {
 	Token token.Token // 特指token.LET
-	Name *Identifier
+	Name  *Identifier
 	Value Expression
 }
 
@@ -49,7 +49,7 @@ func (ls *LetStatement) TokenLiteral() string {
 // 标识符实现的是表达式，表达式生成值，注意与语句的区别
 type Identifier struct {
 	Token token.Token // 特指token.IDENT
-	Value String
+	Value string
 }
 
 func (i *Identifier) expressionNode() {}
