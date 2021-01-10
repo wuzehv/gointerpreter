@@ -22,6 +22,7 @@ type Expression interface {
 	expressionNode()
 }
 
+// root node
 type Program struct {
 	Statements []Statement
 }

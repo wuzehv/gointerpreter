@@ -3,6 +3,9 @@
 本项目用来存放 [《Writing An Interpreter In Go》](https://interpreterbook.com/) 中所有的代码
 
 ### 支持的语法
+
+作者命名该语言为“Monkey”
+
 ```
 let age = 1;
 let name = "Monkey";

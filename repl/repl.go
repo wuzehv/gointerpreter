@@ -1,3 +1,5 @@
+// Package repl stands for "Read Eval Print Loop"
+// console or interactive mode
 package repl
 
 import (
